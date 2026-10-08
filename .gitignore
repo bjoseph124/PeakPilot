@@ -1,0 +1,52 @@
+# Python environments, caches, and build products
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage*
+htmlcov/
+
+# JavaScript dependencies, generated types, and build outputs
+node_modules/
+.next/
+*.tsbuildinfo
+frontend/next-env.d.ts
+.turbo/
+coverage/
+dist/
+build/
+out/
+
+# Local configuration and credentials (only sanitized examples may be shared)
+.env*
+!.env.example
+.npmrc
+.pypirc
+*.pem
+*.key
+*.p12
+.aws/
+.codex/
+
+# Machine-specific files and disposable exports
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.cache/
+*.log
+*.pid
+*.tmp
+*.zip
+*.tar.gz
+tmp/
+temp/
+artifacts/
+test-results/
+playwright-report/

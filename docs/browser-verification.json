@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "desktop": {
+    "width": 1920,
+    "height": 1080,
+    "documentWidth": 1920,
+    "documentHeight": 1080,
+    "panels": [
+      {
+        "text": "Demand, intelligently reshaped kW",
+        "bottom": 726.9375
+      },
+      {
+        "text": "Battery intelligence",
+        "bottom": 726.9375
+      },
+      {
+        "text": "Electricity cost breakdown",
+        "bottom": 1026.9375
+      },
+      {
+        "text": " Storage Opportunity Analysis",
+        "bottom": 1026.9375
+      },
+      {
+        "text": "Shape your scenario",
+        "bottom": 1026.9375
+      }
+    ]
+  },
+  "medium": {
+    "width": 1600,
+    "height": 1000
+  },
+  "browserErrors": [],
+  "browserWarnings": [],
+  "checks": [
+    "real API data",
+    "reset at default parameters",
+    "capacity recalculation",
+    "building recalculation",
+    "forecast toggle",
+    "date navigation",
+    "all navigation views",
+    "methodology dialog",
+    "JSON export",
+    "1920×1080 layout",
+    "1600×1000 layout",
+    "390px mobile layout"
+  ],
+  "exports": [
+    "peakpilot-dashboard-1920.png",
+    "peakpilot-dashboard-1600.png",
+    "peakpilot-dashboard-3840.png",
+    "peakpilot-dashboard.pdf",
+    "peakpilot-mobile.png"
+  ]
+}

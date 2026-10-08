@@ -1,0 +1,143 @@
+{
+  "building": {
+    "id": "office",
+    "name": "Meridian Tower",
+    "type": "Commercial office",
+    "area": "125,000 sq ft"
+  },
+  "battery": {
+    "capacity_kwh": 500.0,
+    "power_kw": 200.0,
+    "round_trip_efficiency": 0.9,
+    "initial_fraction": 0.5,
+    "throughput_cost": 0.008
+  },
+  "tariff": {
+    "energy_price": 0.12,
+    "demand_charge": 24.0,
+    "peak_multiplier": 2.5
+  },
+  "period": {
+    "start": "2025-06-01",
+    "end": "2025-06-30",
+    "days": 30,
+    "interval_minutes": 15,
+    "label": "June 2025 \u00b7 full billing month",
+    "focus_date": "2025-06-18"
+  },
+  "metrics": {
+    "peak_reduction_pct": 4.237681225649514,
+    "peak_reduction_kw": 18.545999999993796,
+    "bill_savings": 1955.0140359447614,
+    "net_operating_savings": 1784.1838140126456,
+    "demand_savings": 445.1039999998502,
+    "energy_savings": 1509.9100359449149,
+    "optimized_peak_kw": 419.0990000000062,
+    "utilization_pct": 100.0,
+    "equivalent_cycles": 21.324181361744998
+  },
+  "comparison": {
+    "baseline": {
+      "energy": 23900.217644999997,
+      "demand": 10503.48,
+      "bill": 34403.69764499999,
+      "throughput": 0.0,
+      "operating_cost": 34403.69764499999,
+      "import_kwh": 140026.19575,
+      "peak_kw": 437.645,
+      "monthly_peaks": {
+        "2025-06": 437.645
+      }
+    },
+    "rule": {
+      "energy": 23400.674424751513,
+      "demand": 10503.48,
+      "bill": 33904.15442475151,
+      "throughput": 67.41564834092958,
+      "operating_cost": 33971.57007309244,
+      "import_kwh": 140511.06397541414,
+      "peak_kw": 437.645,
+      "monthly_peaks": {
+        "2025-06": 437.645
+      },
+      "end_energy_kwh": 291.4016058819003
+    },
+    "forecast": {
+      "energy": 22390.307609055082,
+      "demand": 10058.37600000015,
+      "bill": 32448.68360905523,
+      "throughput": 170.83022193211704,
+      "operating_cost": 32619.513830987347,
+      "import_kwh": 141150.07878902712,
+      "peak_kw": 419.0990000000062,
+      "monthly_peaks": {
+        "2025-06": 419.0990000000062
+      },
+      "end_energy_kwh": 250.0
+    },
+    "oracle": {
+      "energy": 22528.029038307322,
+      "demand": 7249.248990987512,
+      "bill": 29777.278029294834,
+      "throughput": 168.27721971101352,
+      "operating_cost": 29945.555249005847,
+      "import_kwh": 141133.28272178298,
+      "peak_kw": 302.05204129114634,
+      "monthly_peaks": {
+        "2025-06": 302.05204129114634
+      },
+      "end_energy_kwh": 250.0
+    }
+  },
+  "forecasting": {
+    "mae_kw": 7.804283653314064,
+    "baseline_mae_kw": 10.891581597222222,
+    "rmse_kw": 11.18313903288974,
+    "train_samples": 5184,
+    "test_samples": 2880,
+    "train_end": "2025-05-31 23:45:00",
+    "test_start": "2025-06-01 00:00:00"
+  },
+  "economics": {
+    "capital_cost": 220000.0,
+    "annual_om": 3300.0,
+    "illustrative_annual_net": 18110.205768151747,
+    "simple_payback_years": 12.14784651353259,
+    "assumption": "Illustration only: repeat June net operating savings 12 times, less 1.5% annual capital O&M. No seasonal, financing, tax, replacement, or incentive model."
+  },
+  "insights": [
+    {
+      "title": "The afternoon is the opportunity",
+      "text": "The highest observed load is 437.6 kW on Jun 18 at 16:00. Dispatch reduces the month's grid peak by 18.5 kW."
+    },
+    {
+      "title": "Energy shifting leads",
+      "text": "Modeled demand savings are $445; TOU energy savings are $1,510. Charging shifts consumption toward $0.12/kWh intervals."
+    },
+    {
+      "title": "A forecast is not foresight",
+      "text": "Day-ahead MAE is 7.8 kW. Unpredicted peaks can set the entire month's demand charge; the controller cannot undo them."
+    }
+  ],
+  "method": {
+    "dispatch": "Day-ahead MILP, evaluated against actual synthetic loads",
+    "solver": "SciPy / HiGHS MILP",
+    "oracle_gap": 9.677868608032933e-06,
+    "rule_threshold_kw": 307.50125,
+    "runtime_seconds": 3.101527583999996,
+    "notes": [
+      "Original synthetic profiles, not measured utility data.",
+      "Forecast fit once on April\u2013May; June forecasts issued daily with prior observations only.",
+      "No grid export. Every midnight retains at least the 50% initial reserve; leftover energy receives no credit.",
+      "TOU: weekdays 14:00\u201320:00 at 2.5\u00d7 the off-peak rate. Demand charge: one calendar-month maximum.",
+      "Utilization means observed SOC range / nameplate capacity, not a power capacity factor."
+    ]
+  },
+  "versions": {
+    "numpy": "2.0.2",
+    "pandas": "2.2.3",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.6.1",
+    "python": "3.11.17"
+  }
+}
